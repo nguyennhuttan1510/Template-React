@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { useDispatch, useSelector } from "react-redux";
+import { todoSetInitiated } from "./reducers/appSlice";
 
 function App() {
+  const dispatch = useDispatch()
+  const initialState = useSelector(state => state.app.initial)
+
+  const handleAction = () => {
+    dispatch(todoSetInitiated('State is changed'))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +26,12 @@ function App() {
         >
           Learn React
         </a>
+        <div>{initialState}</div>
+    <div>
+      <button onClick={handleAction}>Change Redux Store</button>
+    </div>
       </header>
+    
     </div>
   );
 }
