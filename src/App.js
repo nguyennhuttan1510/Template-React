@@ -11,6 +11,10 @@ function App() {
     dispatch(todoSetInitiated('State is changed'))
   }
 
+  const handleActionMiddleware = () => {
+    dispatch({type:'ACTION_INITIAL', payload: 'Middleware' })
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,6 +33,9 @@ function App() {
         <div>{initialState}</div>
     <div>
       <button onClick={handleAction}>Change Redux Store</button>
+    </div>
+    <div>
+      <button onClick={handleActionMiddleware}>Change State by Middleware</button>
     </div>
       </header>
     
