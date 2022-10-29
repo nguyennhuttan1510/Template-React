@@ -4,9 +4,9 @@ pipeline {
     stage('Build image') {
       steps {
         script {
-          docker.withRegistry('https://index.docker.io/', 'docker') {
+          // docker.withRegistry('https://index.docker.io/', 'docker') {
             docker.build('myapp').push('latest')
-          }  
+          // }  
         }
         
         // withDockerRegistry(credentialsId: 'hub-docker', url: 'https://index.docker.io/') {
