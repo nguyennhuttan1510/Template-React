@@ -3,9 +3,12 @@ pipeline {
   stages {
     stage('Build image') {
       steps {
-        docker.withRegistry('https://index.docker.io/', 'hub-docker') {
-          docker.build('myapp').push('latest')
+        script {
+          docker.withRegistry('https://index.docker.io/', 'hub-docker') {
+            docker.build('myapp').push('latest')
+          }  
         }
+        
         // withDockerRegistry(credentialsId: 'hub-docker', url: 'https://index.docker.io/') {
           // sh '''
           //   docker login -u nguyentan15102000 -p 079200003738tan https://index.docker.io
