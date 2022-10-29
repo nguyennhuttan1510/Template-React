@@ -1,5 +1,5 @@
 pipeline {
-  // agent any
+  agent any
   stages {
     stage('Build image') {
       steps {
@@ -10,7 +10,7 @@ pipeline {
           //   docker push docker-jenkens
           // '''
           sh label: '', script: 'docker login -u nguyentan15102000 -p 079200003738tan https://index.docker.io'
-          sh label: '', script: 'docker build -t nguyentan15102000/docker-jenkens .'
+          // sh label: '', script: 'docker build -t nguyentan15102000/docker-jenkens .'
         // }
       }
     }
