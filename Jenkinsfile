@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Build images') {
       steps {
         script {
           // docker.withRegistry('https://index.docker.io/', 'docker') {
