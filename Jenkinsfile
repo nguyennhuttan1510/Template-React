@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Build image') {
-      // steps {
+      steps {
         // withDockerRegistry(credentialsId: 'hub-docker', url: 'https://index.docker.io/') {
           sh '''
             docker login -u nguyentan15102000 -p 079200003738tan https://index.docker.io
@@ -10,7 +10,7 @@ pipeline {
             docker push docker-jenkens
           '''
         // }
-      // }
+      }
     }
   }
 }
