@@ -13,7 +13,7 @@ pipeline {
           // '''
           // sh label: '', script: 'git clone https://github.com/nguyennhuttan1510/Template-React.git'
           // sh label: '', script: 'docker build -t nguyentan15102000/docker-jenkens .'
-          sh label: '', script: 'curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce.tgz && tar xzvf docker-17.04.0-ce.tgz && mv docker/docker /usr/local/bin && rm -r docker docker-17.04.0-ce.tgz'
+          sh label: '', script: 'curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-18.03.1-ce.tgz && tar xzvf docker-${DOCKERVERSION}.tgz --strip 1 -C /usr/local/bin docker/docker && rm docker-${DOCKERVERSION}.tgz'
         // }
       }
     }
