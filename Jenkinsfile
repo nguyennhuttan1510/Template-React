@@ -4,7 +4,7 @@ pipeline {
     stage('Build image') {
       steps {
         withDockerRegistry(credentialsId: 'hub-docker', url: 'https://index.docker.io/') {
-          sh 'docker build -t docker-jenkins .'
+          sh 'docker build -t nguyentan15102000/docker-jenkins:v1 .'
         }
       }
     }
