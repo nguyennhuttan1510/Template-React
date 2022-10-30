@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build images') {
+    stage('Build images not env variable') {
       steps {
         // script {
         //   // docker.withRegistry('https://index.docker.io/', 'docker') {
@@ -15,7 +15,6 @@ pipeline {
             // docker build -f Dockerfile -t docker-jenkens .
           //   docker push docker-jenkens
           // '''
-          sh label: '', script: 'git clone https://github.com/nguyennhuttan1510/Template-React.git'
           sh label: '', script: 'docker build -t nguyentan15102000/docker-jenkens .'
           // sh label: '', script: 'curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-18.03.1-ce.tgz && tar xzvf docker-18.03.1-ce.tgz --strip 1 -C /usr/local/bin docker/docker && rm docker-18.03.1-ce.tgz'
         // }
